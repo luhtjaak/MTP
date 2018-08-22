@@ -140,8 +140,7 @@ img {
 
 
 .section-inner {
-	width: 1040px;
-	max-width: 90%;
+	width: 100%;
 	margin: 0 auto;
 }
 
@@ -677,7 +676,7 @@ input[type="button"],
 /* -------------------------------------------------------------------------------- */
 
 
-.post-container { background: #fff; }
+.post-container { background: rgba(255, 255, 255, 0.411); }
 
 
 /* Featured Media  ----------------------------------------- */
