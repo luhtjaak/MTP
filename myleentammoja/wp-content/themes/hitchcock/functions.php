@@ -78,7 +78,9 @@ add_action( 'wp_enqueue_scripts', 'hitchcock_load_javascript_files' );
 // Register and enqueue styles
 function hitchcock_load_style() {
 	if ( !is_admin() ) {
-	    wp_enqueue_style( 'hitchcock_googleFonts', '//fonts.googleapis.com/css?family=Montserrat:400,700|Droid+Serif:400,400italic,700,700italic' );
+	    wp_enqueue_style( 'hitchcock_googleFontsMontserrat', '//fonts.googleapis.com/css?family=Montserrat:400,700|Droid+Serif:400,400italic,700,700italic' );
+	    wp_enqueue_style( 'hitchcock_googleFontsNothing', '//fonts.googleapis.com/css?family=Nothing+You+Could+Do' );
+	    wp_enqueue_style( 'hitchcock_googleFontsShadows', '//fonts.googleapis.com/css?family=Shadows+Into+Light' );
 	    wp_enqueue_style( 'hitchcock_fontawesome', get_stylesheet_directory_uri() . '/fa/css/font-awesome.css' );
 	    wp_enqueue_style( 'hitchcock_style', get_stylesheet_uri() );
 	}
@@ -91,6 +93,8 @@ add_action('wp_print_styles', 'hitchcock_load_style');
 function hitchcock_add_editor_styles() {
     add_editor_style( 'hitchcock-editor-styles.css' );
     $font_url = '//fonts.googleapis.com/css?family=Montserrat:400,700|Droid+Serif:400,400italic,700,700italic';
+    $font_url = '//fonts.googleapis.com/css?family=Nothing+You+Could+Do';
+    $font_url = '//fonts.googleapis.com/css?family=Shadows+Into+Light';
     add_editor_style( str_replace( ',', '%2C', $font_url ) );
 }
 add_action( 'init', 'hitchcock_add_editor_styles' );

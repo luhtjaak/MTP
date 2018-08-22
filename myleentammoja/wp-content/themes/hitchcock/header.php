@@ -12,56 +12,7 @@
 	</head>
 	
 	<body <?php body_class(); ?>>
-		
-		<div class="navigation">
-			
-			<div class="section-inner">
-				
-				<ul class="main-menu">
-																		
-					<?php if ( has_nav_menu( 'primary' ) ) {
-																		
-						wp_nav_menu( array( 
-						
-							'container' => '', 
-							'items_wrap' => '%3$s',
-							'theme_location' => 'primary', 
-														
-						) ); } else {
-					
-						wp_list_pages( array(
-						
-							'container' => '',
-							'title_li' => ''
-						
-						));
-						
-					} ?>
-					
-					<li class="header-search">
-						<form method="get" class="search-form" id="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-							<input type="search" class="search-field" name="s" placeholder="<?php _e('Search Form','hitchcock'); ?>" /> 
-							<a class="search-button" onclick="document.getElementById('search-form').submit(); return false;"><div class="fa fw fa-search"></div></a>
-						</form>
-					</li>
-					
-				</ul>
-				
-				<div class="clear"></div>
-				
-			</div> <!-- /section-inner -->
-			
-			<div class="nav-toggle">
-					
-				<div class="bars">
-					<div class="bar"></div>
-					<div class="bar"></div>
-					<div class="bar"></div>
-				</div>
-				
-			</div> <!-- /nav-toggle -->
-			
-			<div class="mobile-navigation">
+		<div class="mobile-navigation">
 			
 				<ul class="mobile-menu">
 																			
@@ -86,14 +37,9 @@
 						
 					</ul>
 					
-					<?php get_search_form(); ?>
+					<!-- <?php get_search_form(); ?> -->
 			
 			</div> <!-- /mobile-navigation -->
-			
-		</div> <!-- /navigation -->
-		
-		<div class="header-image" style="background-image: url(<?php if (get_header_image() != '') : ?><?php header_image(); ?><?php else : ?><?php echo get_template_directory_uri() . '/images/bg.jpg'; ?><?php endif; ?>);"></div>
-	
 		<div class="header section-inner">
 		
 			<?php if ( get_theme_mod( 'hitchcock_logo' ) ) : ?>
@@ -142,3 +88,54 @@
 			<?php endif; ?>
 			
 		</div> <!-- /header -->
+
+		<div class="navigation">
+			<div class="navigation-line"></div>
+			<div class="section-inner">
+				
+				<ul class="main-menu">
+																		
+					<?php if ( has_nav_menu( 'primary' ) ) {
+																		
+						wp_nav_menu( array( 
+						
+							'container' => '', 
+							'items_wrap' => '%3$s',
+							'theme_location' => 'primary', 
+														
+						) ); } else {
+					
+						wp_list_pages( array(
+						
+							'container' => '',
+							'title_li' => ''
+						
+						));
+						
+					} ?>
+					
+					<!-- <li class="header-search">
+						<form method="get" class="search-form" id="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+							<input type="search" class="search-field" name="s" placeholder="<?php _e('Search Form','hitchcock'); ?>" /> 
+							<a class="search-button" onclick="document.getElementById('search-form').submit(); return false;"><div class="fa fw fa-search"></div></a>
+						</form>
+					</li> -->
+					
+				</ul>
+				
+				<div class="clear"></div>
+				
+			</div> <!-- /section-inner -->
+			<div class="navigation-line"></div>
+
+			<div class="nav-toggle">
+					
+				<div class="bars">
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+				</div>
+				
+			</div> <!-- /nav-toggle -->
+			
+		</div> <!-- /navigation -->
